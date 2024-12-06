@@ -62,7 +62,12 @@ while ($passwordIndex -lt $passwords.Count) {
         $passwordIndex++
 
         # Escape `$` in the current password
-        $escapedPassword = $currentPassword -replace '\$', '`$'
+        $escapedPassword = $currentPassword -replace '\`', '``'
+        $escapedPassword = $escapedPassword -replace '\$', '`$'
+        $escapedPassword = $escapedPassword -replace '\|', '`|'
+        $escapedPassword = $escapedPassword -replace '\&', '`&'
+        $escapedPassword = $escapedPassword -replace '\"', '`"'
+        $escapedPassword = $escapedPassword -replace "\'", "`'"
 
         # Replace <pass> in the command template with the escaped password
         $command = $CommandTemplate.Replace('<pass>', $escapedPassword)
