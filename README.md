@@ -30,3 +30,8 @@ So you'd set the follow as such:
 ```
 
 *NB*: Kerbrutus counts `30` minutes from when the last command finishes executing and adds 1 minute to create a buffer.
+
+Then you can just `grep` all `VALID LOGIN`s from the log file:
+```PowerShell
+Select-String -Path "results.log" -Pattern "VALID LOGIN"
+```
