@@ -10,7 +10,7 @@ The value specified in `-OutputFile` will have all results appended to it.
 
 ## Why?
 
-So you can continuously and safely run Kerbrute (namely the `passwordspray` function) in alignment with the password policy of the AD environment you are using.
+So you can continuously and safely run [Kerbrute](https://github.com/ropnop/kerbrute) (namely the `passwordspray` function) in alignment with the password policy of the AD environment you are using.
 
 E.g.
 ```PowerShell
