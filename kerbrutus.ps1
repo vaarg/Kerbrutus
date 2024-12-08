@@ -84,12 +84,17 @@ while ($passwordIndex -lt $passwords.Count) {
         $currentPassword = $passwords[$passwordIndex]
         $passwordIndex++
 
+        # Escape only passwords with double quotes
+        if ($currentPassword -match '"') {
+            $currentPassword = $currentPassword -replace '"', '""'
+        }
+
         # Replace <pass> in the command template
         $command = $CommandTemplate.Replace('<pass>', $currentPassword)
 
         # Debugging output
-        # Write-Host "DEBUG: Current Password: $currentPassword" -ForegroundColor Yellow
-        # Write-Host "DEBUG: Generated Command: $command" -ForegroundColor Green
+        Write-Host "DEBUG: Current Password: $currentPassword" -ForegroundColor Yellow
+        Write-Host "DEBUG: Generated Command: $command" -ForegroundColor Green
 
         # Execute the command and append to the output file
         ExecuteCommand -CommandToExecute $command -LogFile $OutputFile
