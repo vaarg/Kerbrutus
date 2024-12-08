@@ -24,7 +24,7 @@ LockoutThreshold            : 5
 <SNIP>
 ```
 
-So, as the `LockoutDuration` is `30` and the `LockoutThreshold` is `5`, you might choose to safely spray `3` passwords (for ever domain user) within a `30` minute window.
+So, as the `LockoutObservationWindow` is `30` and the `LockoutThreshold` is `5`, you might choose to safely spray `3` passwords (for ever domain user) within a `30` minute window.
 
 So you'd set the follow as such:
 ```PowerShell
