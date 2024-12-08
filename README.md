@@ -5,11 +5,12 @@
 ```
 
 In `-CommandTemplate` the `<pass>` is placeholder value that will be populated in the command from the specified file in `-PasswordsFile`.
-Value specified in `-OutputFile` will have all results appended to it.
+
+The value specified in `-OutputFile` will have all results appended to it.
 
 ## Why?
 
-So you can continuously run Kerbrute and use it safely with the password poliicy of the AD environment you are using.
+So you can continuously and safely run Kerbrute (namely the `passwordspray` function) in alignment with the password policy of the AD environment you are using.
 
 E.g.
 ```PowerShell
